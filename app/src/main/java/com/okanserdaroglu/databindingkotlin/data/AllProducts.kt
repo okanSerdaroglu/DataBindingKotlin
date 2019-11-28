@@ -4,8 +4,8 @@ import com.okanserdaroglu.databindingkotlin.R
 
 class AllProducts {
 
-    var allProductsArray:Array<Product>
-    var allProductsMap : HashMap<String, Product> = HashMap()
+    var allProductsArray: Array<Product>
+    var allProductsMap: HashMap<String, Product> = HashMap()
 
     init {
         val KIRMIZI_LAMBA = Product(
@@ -56,10 +56,20 @@ class AllProducts {
             4.8f, 951433
         )
 
-        allProductsArray= arrayOf(KIRMIZI_LAMBA,SARI_LAMBA,MAVI_KUPA,BEYAZ_KUPA,KIRMIZI_KUPA,MAVI_SAPKA,BEYAZ_SAPKA,TURUNCU_SAPKA)
+        allProductsArray = arrayOf(
+            KIRMIZI_LAMBA,
+            SARI_LAMBA,
+            MAVI_KUPA,
+            BEYAZ_KUPA,
+            KIRMIZI_KUPA,
+            MAVI_SAPKA,
+            BEYAZ_SAPKA,
+            TURUNCU_SAPKA
+        )
 
-        for (product in allProductsArray){
-            allProductsMap[product.serialNumber.toString()] = product // allProductsMap.put(product.serialNumber.toString(), product)
+        for (product in allProductsArray) {
+            allProductsMap[product.serialNumber.toString()] =
+                product // allProductsMap.put(product.serialNumber.toString(), product)
 
         }
     }
