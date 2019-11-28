@@ -1,10 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
+apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
 
-apply plugin: 'kotlin-kapt'
-
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
@@ -30,6 +28,20 @@ android {
 
 }
 
+buildscript {
+    repositories {
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        jcenter()
+        google()
+    }
+
+
+
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -39,6 +51,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0-alpha02'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    kapt("groupId:artifactId:version")
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
 }
