@@ -13,6 +13,11 @@ class Product(
     val rateNote: Float,
     val serialNumber: Int
 ):Parcelable {
+
+    fun isCampaign () : Boolean {
+        return discountedPrice > 0
+    }
+
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
@@ -49,4 +54,7 @@ class Product(
             return arrayOfNulls(size)
         }
     }
+
+
+
 }
