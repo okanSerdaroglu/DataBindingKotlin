@@ -4,14 +4,14 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class Product(
-    private val header: String,
-    private val detail: String,
-    private val image: Int,
-    private val price: Double,
-    private val discountedPrice: Double,
-    private val rateNumber: Int,
-    private val rateNote: Float,
-    private val serialNumber: Int
+    val header: String,
+    val detail: String,
+    val image: Int,
+    val price: Double,
+    val discountedPrice: Double,
+    val rateNumber: Int,
+    val rateNote: Float,
+    val serialNumber: Int
 ):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
