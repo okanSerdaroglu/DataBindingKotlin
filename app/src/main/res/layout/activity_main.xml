@@ -6,7 +6,7 @@
     <data>
         <variable
             name="student"
-            type="com.okanserdaroglu.databindingkotlin.Student" />
+            type="com.okanserdaroglu.databindingkotlin.data.Student" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{student.name}"
+            tools:text="okan"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -31,6 +32,7 @@
             android:layout_height="wrap_content"
             android:text="@{String.valueOf(student.number)}"
             app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="22"
             app:layout_constraintEnd_toEndOf="@+id/textViewName"
             app:layout_constraintStart_toStartOf="@+id/textViewName"
             app:layout_constraintTop_toBottomOf="@+id/textViewName" />
