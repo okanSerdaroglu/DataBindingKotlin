@@ -7,9 +7,10 @@
     <data>
 
         <import type="android.view.View"/>
+        <import type="com.okanserdaroglu.databindingkotlin.data.Product"/>
         <variable
             name="product"
-            type="com.okanserdaroglu.databindingkotlin.data.Product" />
+            type="Product" />
 
     </data>
 
