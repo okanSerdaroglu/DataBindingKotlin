@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun callFragment() {
 
-        val productDetailFragment = ProductDetailFragment() // fragment
+        val productDetailFragment = MainFragment() // fragment
         val transaction: FragmentTransaction =
             supportFragmentManager.beginTransaction() // transaction
         transaction.replace(
