@@ -6,7 +6,11 @@
 
     <data>
         <import type="java.util.ArrayList"/>
+        <import type="androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener"/>
         <import type="com.okanserdaroglu.databindingkotlin.data.Product"/>
+        <variable
+            name="onRefreshListener"
+            type="OnRefreshListener" />
         <variable
             name="productList"
             type="ArrayList&lt;Product>" />
@@ -19,6 +23,7 @@
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:setRefreshListener="@{onRefreshListener}"
             android:id="@+id/swipeRefreshLayout">
 
             <androidx.recyclerview.widget.RecyclerView
