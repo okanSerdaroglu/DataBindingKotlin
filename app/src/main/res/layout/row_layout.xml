@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+        <import type="com.okanserdaroglu.databindingkotlin.data.Product"/>
+        <variable
+            name="product"
+            type="Product" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/constraintLayoutRoot"
+        tools:context=".fragments.ProductDetailFragment">
+
+
+        <RatingBar
+            android:id="@+id/ratingBarAverageRates"
+            style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:rating="@{product.rateNote}"
+            app:layout_constraintStart_toStartOf="@+id/textViewProductPrice"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProductPrice" />
+
+        <TextView
+            android:id="@+id/textViewTotalRatesNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(product.rateNumber)}"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingBarAverageRates"
+            app:layout_constraintStart_toEndOf="@+id/ratingBarAverageRates"
+            app:layout_constraintTop_toTopOf="@+id/ratingBarAverageRates"
+            tools:text="( 9 )" />
+
+        <TextView
+            android:id="@+id/textViewProductHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{product.header}"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ürün Başlık" />
+
+        <ImageView
+            android:id="@+id/imageViewProduct"
+            android:layout_width="0dp"
+
+            android:src="@{product.image}"
+            android:layout_height="250dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProductHeader" />
+
+        <TextView
+            android:id="@+id/textViewProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp"
+
+            android:text="@{product.campaign ? String.valueOf(product.discountedPrice) : String.valueOf(product.price)}"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProductDetail"
+            tools:text="20.99" />
+
+        <TextView
+            android:id="@+id/textViewOriginalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/cancel_price"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="@{product.campaign ? View.VISIBLE : View.GONE}"
+            android:text="@{String.valueOf(product.price)}"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewProductPrice"
+            app:layout_constraintStart_toEndOf="@+id/textViewProductPrice"
+            app:layout_constraintTop_toTopOf="@+id/textViewProductPrice"
+            tools:text="23.99" />
+
+        <TextView
+            android:id="@+id/textViewProductDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="18sp"
+            android:text="@{product.detail}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewProduct"
+            tools:text="Ürün açıklaması buraya gelecek" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
