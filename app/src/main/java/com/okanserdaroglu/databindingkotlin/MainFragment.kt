@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.okanserdaroglu.databindingkotlin.adapters.ProductRecyclerViewAdapter
 import com.okanserdaroglu.databindingkotlin.data.AllProducts
+import com.okanserdaroglu.databindingkotlin.data.Product
 import com.okanserdaroglu.databindingkotlin.databinding.FragmentMainBinding
+import com.okanserdaroglu.databindingkotlin.interfaces.IMainActivity
 
-class MainFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener {
+class MainFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener,IMainActivity {
 
     private val binding : FragmentMainBinding by lazy {
         FragmentMainBinding.inflate(layoutInflater)
@@ -33,5 +35,9 @@ class MainFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener {
         binding.swipeRefreshLayout.isRefreshing = false
 
     }
+
+    override fun showSelectedProduct(product: Product) {
+    }
+
 
 }

@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.okanserdaroglu.databindingkotlin.data.Product
 import com.okanserdaroglu.databindingkotlin.databinding.RowLayoutBinding
+import com.okanserdaroglu.databindingkotlin.interfaces.IMainActivity
 
 class ProductRecyclerViewAdapter(
-    private var allProducts: ArrayList<Product>
+    private var allProducts: ArrayList<Product>,
+    private var mainActivityInterface: IMainActivity
 ) : RecyclerView.Adapter<ProductRecyclerViewAdapter.ViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 

@@ -7,9 +7,13 @@
     <data>
         <import type="android.view.View"/>
         <import type="com.okanserdaroglu.databindingkotlin.data.Product"/>
+        <import type="com.okanserdaroglu.databindingkotlin.interfaces.IMainActivity"/>
         <variable
             name="product"
             type="Product" />
+        <variable
+            name="mainActivityInterface"
+            type="IMainActivity" />
     </data>
 
 
@@ -17,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/constraintLayoutRoot"
+        android:onClick="@{mainActivityInterface.showSelectedProduct(product)}"
         tools:context=".fragments.ProductDetailFragment">
 
 
