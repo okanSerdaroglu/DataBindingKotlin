@@ -7,21 +7,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.okanserdaroglu.databindingkotlin.data.Product
 import com.okanserdaroglu.databindingkotlin.databinding.RowLayoutBinding
 
-class ProductRecyclerViewAdapter(allProducts: ArrayList<Product>,context: Context) : RecyclerView.Adapter<ProductRecyclerViewAdapter.ViewHolder>() {
-
-    private var allProducts:List<Product>
-    private var context:Context
-
-    init {
-        this.context = context
-        this.allProducts = allProducts
-    }
+class ProductRecyclerViewAdapter(
+    private var allProducts: ArrayList<Product>,
+    private var context: Context
+) : RecyclerView.Adapter<ProductRecyclerViewAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        val binding : RowLayoutBinding = RowLayoutBinding.inflate(LayoutInflater.from(context))
-
+        val binding: RowLayoutBinding = RowLayoutBinding.inflate(LayoutInflater.from(context))
         return ViewHolder(binding)
 
     }
