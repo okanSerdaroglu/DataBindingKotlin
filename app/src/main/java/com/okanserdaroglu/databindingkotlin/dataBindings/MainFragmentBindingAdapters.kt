@@ -1,6 +1,5 @@
 package com.okanserdaroglu.databindingkotlin.dataBindings
 
-import android.app.Activity
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView

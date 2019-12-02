@@ -61,8 +61,7 @@
         <ImageView
             android:id="@+id/imageViewProduct"
             android:layout_width="0dp"
-
-            android:src="@{product.image}"
+            app:showImagesWithGlide="@{product.image}"
             android:layout_height="250dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
